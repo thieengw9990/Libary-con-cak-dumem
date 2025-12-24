@@ -1,0 +1,22 @@
+local FluentRedz = require(script.Parent.FluentRedz)
+
+local window = FluentRedz:CreateWindow("My UI", {
+    Theme = "Dark"
+})
+
+local mainTab = window:CreateTab("Main", nil)
+
+local button = FluentRedz.Controls.CreateButton(mainTab, {
+    Title = "Click Me",
+    Callback = function()
+        print("Button clicked!")
+    end
+})
+
+local toggle = FluentRedz.Controls.CreateToggle(mainTab, {
+    Title = "Enable Feature",
+    Default = false,
+    Callback = function(value)
+        print("Toggle:", value)
+    end
+})
